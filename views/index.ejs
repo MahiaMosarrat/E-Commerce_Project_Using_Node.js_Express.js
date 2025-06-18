@@ -1,0 +1,372 @@
+<%- include("layouts/header.ejs") %>
+<main>
+  <button
+    id="openChatButton"
+    style="border-radius: 50%; background-color: transparent"
+  >
+    <img src="myImages/livechat.png" alt="chat icon" />
+  </button>
+  <div class="chat-container" id="chatContainer" style="display: none">
+    <div class="message-container" id="messages"></div>
+
+    <div class="message">
+      <input type="text" placeholder="Type your message..." id="messageInput" />
+      <button id="sendMessageButton" onclick="sendMessage()">Send</button>
+    </div>
+    <button id="closeChatButton">X</button>
+  </div>
+
+  <div class="banner_section layout_padding">
+    <div class="container">
+      <div id="main_slider" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="image_1">
+                  <img src="myImages/image_caro.png" style="height: 410px" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h1 class="banner_taital">
+                  Baby <span style="color: #0a7a6f">Hygiene</span>
+                </h1>
+                <p class="banner_text">
+                  This category provides everything you need to keep your baby
+                  clean and comfortable, from gentle wipes and diapers to bath
+                  essentials, creams, and clothing. With soft, hypoallergenic
+                  materials and baby-safe formulas, we ensure your little one
+                  stays fresh and protected while making hygiene routines easy
+                  and stress-free for parents.
+                </p>
+                <div class="buy_bt"><a href="/shop">Buy Now</a></div>
+                <div class="read_bt"><a href="/">Read More</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="image_1">
+                  <img src="myImages/image_2.png" style="height: 410px" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h1 class="banner_taital">
+                  Baby <span style="color: #0a7a6f">Food</span>
+                </h1>
+                <p class="banner_text">
+                  This category offers everything you need to feed your baby,
+                  from purees and snacks to bowls, spoons, and bibs. With safe,
+                  easy-to-clean materials and practical features, we make
+                  mealtime simple and enjoyable for both you and your little
+                  one.
+                </p>
+                <div class="buy_bt"><a href="/shop">Buy Now</a></div>
+                <div class="read_bt"><a href="/">Read More</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="image_1">
+                  <img src="myImages/image_3.png" style="height: 320px" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h1 class="banner_taital">
+                  Baby <span style="color: #0a7a6f">Clothes</span>
+                </h1>
+                <p class="banner_text">
+                  This category offers a wide range of clothing to keep your
+                  baby cozy and stylish, from onesies and sleepers to socks,
+                  hats, and mittens. Made with soft, breathable fabrics and
+                  gentle designs, our clothes are perfect for your little one's
+                  delicate skin, ensuring comfort and ease for both everyday
+                  wear and special occasions.
+                </p>
+                <div class="buy_bt"><a href="/shop">Buy Now</a></div>
+                <div class="read_bt"><a href="/">Read More</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a
+          class="carousel-control-prev"
+          href="#main_slider"
+          role="button"
+          data-slide="prev"
+        >
+          <i class=""><img src="images/left-icon.png" /></i>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#main_slider"
+          role="button"
+          data-slide="next"
+        >
+          <i class=""><img src="images/right-icon.png" /></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!--banner section end -->
+  <!--about section start -->
+  <div class="about_section layout_padding">
+    <div class="container">
+      <div class="image_2">
+        <img src="myImages/store_overview_icon.png" style="height: 60px" />
+      </div>
+      <h1 class="about_taital">Store Overview</h1>
+      <div class="image_3">
+        <img
+          src="myImages/baby-care-product_banner.jpg"
+          style="
+            width: 200rem;
+            border: 1.5px rgb(33, 158, 118);
+            border-style: dotted;
+          "
+        />
+      </div>
+      <p class="lorem_text">
+        Explore a carefully curated selection of baby essentials, from clothing
+        and toys to hygiene and feeding products. Our store offers high-quality,
+        safe, and stylish items designed to make parenting easier and more
+        enjoyable. With a focus on comfort, practicality, and care, you'll find
+        everything you need to nurture and support your little one as they grow.
+      </p>
+      <div class="read_bt_1"><a href="#">Read More</a></div>
+    </div>
+
+    <div class="vegetables_section layout_padding">
+      <div class="container">
+        <div class="image_2">
+          <img src="myImages/shop.png" style="height: 75px" />
+        </div>
+        <h1 class="about_taital">Our Store</h1>
+        <p class="lorem_text">
+          Welcome to <strong>BabyCare</strong>, your go-to destination for
+          high-quality baby essentials from trusted brands. We offer a seamless
+          shopping experience with our
+          <strong>easy-to-navigate platform</strong> and
+          <strong>fast nationwide delivery</strong> across Bangladesh. Join the
+          <strong>BabyCare family</strong> for expert advice, premium products
+          and exceptional service designed to make your parenting journey easier
+          and more fulfilling!
+        </p>
+      </div>
+      <div class="vegetables_section_2 layout_padding">
+        <div class="row" style="padding: 0 15px">
+          <% products.forEach(product => { %>
+          <!-- <div class="col"> -->
+          <div class="col-md-4 col-lg-3">
+            <div class="box_section">
+              <div class="image_4" style="height: 300px">
+                <img src="<%= product.image_path %>" />
+              </div>
+              <h2 class="dolor_text" style="padding: 10px 0">
+                <%= product.product_price %> TK
+              </h2>
+              <a href="/product/<%= product.id %>"
+                ><h2 class="dolor_text"><%= product.product_title %></h2></a
+              >
+              <p class="tempor_text"><%= product.product_description %></p>
+
+              <form action="/cart/add" method="POST" class="text-center">
+                <input
+                  type="hidden"
+                  name="productId"
+                  value="<%= product.id %>"
+                />
+                <button
+                  type="submit"
+                  class="btn btn-lg btn-dark"
+                  style="background-color: #0a7a6f; border-style: none"
+                >
+                  Add to Cart
+                </button>
+              </form>
+            </div>
+          </div>
+          <% }); %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--choose section start -->
+  <div class="choose_section layout_padding" style="margin-bottom: 20px">
+    <div class="container">
+      <div class="image_2">
+        <img src="myImages/why_choose_us.png" style="height: 60px" />
+      </div>
+      <h1 class="about_taital">Why Choose Us</h1>
+      <div class="image_3"><img src="myImages/why_choose_babyCare.gif" /></div>
+      <p class="lorem_text">
+        We offer a wide selection of baby essentials from trusted brands,
+        ensuring quality and safety for your little one. Our user-friendly
+        platform makes shopping easy, while our reliable nationwide delivery
+        ensures your products reach you across Bangladesh. Join the growing
+        community of parents who trust us for expert advice and top-quality
+        products, all designed to make parenting simpler and more joyful.
+      </p>
+      <div class="read_bt_1"><a href="/">Read More</a></div>
+    </div>
+  </div>
+
+  <!--choose section end -->
+
+  <!--offer section start -->
+  <div class="choose_section" style="background-color: #fff">
+    <div>
+      <h2
+        style="
+          margin-left: 10px;
+          margin-top: 10px;
+          font-size: 20px;
+          font-weight: 600;
+          color: rgb(90, 47, 161);
+        "
+      >
+        <span
+          style="
+            border-bottom: 1px solid rgb(218, 212, 212);
+            padding-bottom: 5px;
+          "
+          >Up to 60% off | New arrivals and top customer picks</span
+        >
+      </h2>
+      <div class="image_offer" style="margin: 0 10px">
+        <img
+          src="myImages/banner_pic.jpg"
+          style="border: 2px double rgb(150, 114, 208)"
+        />
+      </div>
+      <div class="image_offer" style="margin: 0 10px">
+        <img
+          src="myImages/discount_pic.jpg"
+          style="border: 2px double rgb(38, 210, 147); margin-top: 5px"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!--choose section end -->
+
+  <!--contact section start -->
+  <div class="contact_section layout_padding">
+    <div class="container">
+      <div class="image_2">
+        <img src="myImages/contact_us.png" style="height: 60px" />
+      </div>
+      <h1 class="about_taital">Contact Us</h1>
+      <div class="row">
+        <div
+          class="col-md-6"
+          style="
+            background-image: url(myImages/baby-supplies.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position-x: 30%;
+            opacity: 0.6;
+          "
+        >
+          <div class="mail_sectin">
+            <input
+              type="text"
+              class="email-bt"
+              placeholder="Your Name"
+              name="Name"
+            />
+            <input
+              type="text"
+              class="email-bt"
+              placeholder="Email"
+              name="Name"
+            />
+            <input
+              type="text"
+              class="email-bt"
+              placeholder="Phone Number"
+              name="Name"
+            />
+            <textarea
+              class="massage-bt"
+              placeholder="Massage"
+              rows="5"
+              id="comment"
+              name="Massage"
+            ></textarea>
+            <div class="send_bt"><a href="#">Send</a></div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="map_main">
+            <div class="map-responsive">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.489451881827!2d90.42375860000001!3d23.80118829999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7b0526262e5%3A0x23f11c5b9e0faf65!2s2%2C%20Level%2C%201%20Baridhara%20J%20Block%2C%20Dhaka%201212!5e0!3m2!1sen!2sbd!4v1740240274792!5m2!1sen!2sbd"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const socket = io();
+      const messagesDiv = document.getElementById("messages");
+
+      function addClassesToMessages() {
+        var messages = messagesDiv.querySelectorAll("p");
+        messages.forEach(function (message, index) {
+          if (index % 2 === 0) {
+            message.classList.add("even");
+            message.classList.remove("odd");
+          } else {
+            message.classList.add("odd");
+            message.classList.remove("even");
+          }
+        });
+      }
+
+      socket.on("message", (message) => {
+        messagesDiv.innerHTML += `<p>${message}</p>`;
+        addClassesToMessages();
+      });
+
+      function sendMessage() {
+        const messageInput = document.getElementById("messageInput");
+        const message = messageInput.value;
+        socket.emit("message", message);
+        messageInput.value = "";
+      }
+
+      const openChatButton = document.getElementById("openChatButton");
+      const closeChatButton = document.getElementById("closeChatButton");
+      const chatContainer = document.getElementById("chatContainer");
+
+      openChatButton.addEventListener("click", () => {
+        chatContainer.style.display = "block";
+      });
+
+      closeChatButton.addEventListener("click", () => {
+        chatContainer.style.display = "none";
+      });
+
+      const sendMessageButton = document.getElementById("sendMessageButton");
+      sendMessageButton.addEventListener("click", sendMessage);
+    });
+  </script>
+</main>
+<%- include("layouts/footer.ejs") %>
