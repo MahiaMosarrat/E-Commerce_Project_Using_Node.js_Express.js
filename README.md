@@ -101,7 +101,10 @@ Follow these steps to get the BabyCare E-Commerce Platform up and running on you
 7.  **Open in Browser:**
     Once the server is running, open your web browser and navigate to `http://localhost:3000` (or the port you defined in your `.env` file).
 ---
+## 🖼️  UI Preview
+<img width="1198" height="5241" alt="image" src="https://github.com/user-attachments/assets/342800a6-df70-494c-a9a7-9e92f0fb0cb9" />
 
+---
 ## 🤝 Contribution
 
 Contributions are highly welcome! Whether it's bug fixes, new features, or improvements to the documentation, your efforts are appreciated.
